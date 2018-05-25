@@ -15,5 +15,6 @@ docker run -itd -p 8005:8005 --add-cap NET_RAW --add-cap NET_ADMIN --add-cap SYS
 ## Kubernetes
 
 For deploying multiple instances, it is recommended that you use a statefulset for both Elasticsearch and Moloch to prevent changes in the container/pod states. You may also want to use a config map for the ```config.ini``` file to further customize your deployment. 
-k
+
+
 If you're looking for more opensource containerized tools, take a look at https://github.com/sealingtech/EDCOP for a fully automated network security platform that utilizes Docker and Kubernetes for deployments and scaling! 
