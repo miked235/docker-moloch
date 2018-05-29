@@ -1,13 +1,5 @@
 #!/bin/bash
-# Script to initialize + configure moloch, add a user, and run the services
-
-# Configure Moloch
-/data/moloch/bin/Configure << EOF
-$NETWORK_INTERFACE
-no
-$ES_HOST:9200
-$CLUSTER_PW
-EOF
+# Script to initialize Moloch, add a user, and run the services
 
 # Check to see if Elasticsearch is reachable
 echo "Trying to reach Elasticsearch..."

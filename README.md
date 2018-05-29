@@ -2,14 +2,15 @@
 
 ## Docker
 
-For deploying a Moloch instance with Docker, please have a working Elasticsearch deployment running and a way to access it. You can edit the ```Dockerfile``` environment variables to set your configuration settings.  
+For deploying a Moloch instance with Docker, please have a working Elasticsearch deployment running and a way to access it. You can edit the ```Dockerfile``` environment variables and the ```etc/config.ini``` file to set your configuration settings.  
+
 
 The command below uses a Docker link to link the two containers together:
 
 ```
 sysctl -w vm.max_map_count=262144
-docker run -p 9200:9200 -p 9300:9300 --name elasticsearch docker.elastic.co/elasticsearch/elasticsearch:6.2.4
-docker run -itd -p 8005:8005 --add-cap NET_RAW --add-cap NET_ADMIN --add-cap SYS_NICE --link elasticsearch:elasticsearch --name moloch moloch
+sudo docker run -p 9200:9200 -p 9300:9300 --name elasticsearch docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+sudo docker run -itd -p 8005:8005 --add-cap NET_RAW --add-cap NET_ADMIN --link elasticsearch:elasticsearch --name moloch moloch
 ```
 
 ## Kubernetes
