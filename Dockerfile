@@ -11,7 +11,7 @@ ENV ES_HOST=elasticsearch \
 	NETWORK_INTERFACE=eth0 \
 	CLUSTER_PW=secretpw \
 	ADMIN_PW=supersecretpw \
-	
+	SENSOR=true
 RUN chmod +x /data/moloch/*.sh && \
 	chmod +x /data/moloch/db/db.pl /data/moloch/*/*.sh && \
 	/data/moloch/configmoloch.sh && \
