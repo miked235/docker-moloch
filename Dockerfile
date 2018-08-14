@@ -17,7 +17,7 @@ RUN chmod +x /data/moloch/*.sh && \
 	/data/moloch/configmoloch.sh && \
 	cd /data/moloch/viewer && \
 	ln -s /data/moloch/bin/node /usr/bin/nodejs && \
-	npm update && \
+	npm update . && \
 	npm install . && \
 	yum clean -y all
 
