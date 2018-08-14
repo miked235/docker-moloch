@@ -1,6 +1,5 @@
 #!/bin/bash
 # Script to initialize Moloch, add a user, and run the services
-IP=`hostname -i`
 
 # Check to see if Elasticsearch is reachable
 echo "Trying to reach Elasticsearch..."
@@ -28,7 +27,6 @@ chmod a+rwx /data/moloch/raw /data/moloch/logs
 if [ "$SENSOR" = "true" ]
 then
   echo "Starting Moloch capture and viewer..."
-  sed -i 's/#viewUrl = .*/viewUrl = https:\/\/'"$IP"':8005/' /data/moloch/etc/config.ini
   /data/moloch/bin/moloch_config_interfaces.sh
   cd /data/moloch
   nohup /data/moloch/bin/moloch-capture -c /data/moloch/etc/config.ini >> /data/moloch/logs/capture.log 2>&1 &
