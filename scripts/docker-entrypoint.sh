@@ -1,6 +1,11 @@
 #!/bin/bash
 # Script to initialize Moloch, add a user, and run the services
 
+# Add in service DNS to resolv.conf
+cp /etc/resolv.conf /etc/resolv2.conf
+sed -i 's/search /search '$RELEASE_NAME'-headless.'$NAMESPACE'.svc.cluster.local /' /etc/resolv2.conf
+cp /etc/resolv2.conf /etc/resolv.conf
+
 # Check to see if Elasticsearch is reachable
 echo "Trying to reach Elasticsearch..."
 until $(curl --output /dev/null --fail --silent -X GET "$ES_HOST:9200/_cat/health?v"); do
