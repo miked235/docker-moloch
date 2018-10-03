@@ -8,10 +8,10 @@ RUN yum -y update && yum -y install epel-release && \
 ADD scripts /data/moloch/
 
 ENV ES_HOST=elasticsearch \
-	NETWORK_INTERFACE=eth0 \
+	INTERFACE=eth0 \
 	CLUSTER_PW=secretpw \
 	ADMIN_PW=supersecretpw \
-	SENSOR=true 
+	SENSOR=true
 # Kubernetes sets these
 ENV NAMESPACE="" 
 ENV RELEASE_NAME="" 
