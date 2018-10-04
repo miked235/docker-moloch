@@ -13,8 +13,8 @@ ENV ES_HOST=elasticsearch \
 	ADMIN_PW=supersecretpw \
 	SENSOR=true
 # Kubernetes sets these
-ENV NAMESPACE="" 
-ENV RELEASE_NAME="" 
+#ENV NAMESPACE="" 
+#ENV RELEASE_NAME="" 
 
 RUN chmod +x /data/moloch/*.sh && \
 	chmod +x /data/moloch/db/db.pl /data/moloch/*/*.sh && \

@@ -2,10 +2,10 @@
 # Script to initialize Moloch, add a user, and run the services
 
 # Add in service DNS to resolv.conf
-cp /etc/resolv.conf /etc/resolv2.conf
-sed -i 's/search /search '$RELEASE_NAME'-headless.'$NAMESPACE'.svc.cluster.local /' /etc/resolv2.conf
-cp /etc/resolv2.conf /etc/resolv.conf
-rm -rf /etc/resolv2.conf
+#cp /etc/resolv.conf /etc/resolv2.conf
+#sed -i 's/search /search '$RELEASE_NAME'-headless.'$NAMESPACE'.svc.cluster.local /' /etc/resolv2.conf
+#cp /etc/resolv2.conf /etc/resolv.conf
+#rm -rf /etc/resolv2.conf
 
 # Configure Moloch
 /data/moloch/bin/Configure << EOF
